@@ -1,0 +1,135 @@
+.heroimg {
+    background-image: url(bg.jpg); /* 替换 'your-image.jpg' 为您的图片路径 */
+    background-size: cover;
+}
+
+.navbar {
+    backdrop-filter: blur(20px); /* 模糊效果，可以根据需要调整像素值 */
+    color:rgb(255, 255, 255) ;
+}
+
+.navbar-brand {
+    /* 添加您希望的效果，例如改变文字颜色或添加阴影等 */
+    color: rgb(255, 255, 255); /* 例如将文字颜色改为红色 */
+    /* 其他样式 */
+}
+
+.navbar-brand:hover {
+    /* 添加您希望的效果，例如改变文字颜色或添加阴影等 */
+    color: rgb(83, 134, 95); /* 例如将文字颜色改为红色 */
+    /* 其他样式 */
+}
+
+.nav-link {
+    color: rgb(255, 255, 255); /* 将链接文字颜色设置为红色 */
+}
+
+.nav-link:hover {
+    /* 添加您希望的效果，例如改变文字颜色或添加阴影等 */
+    color: rgb(83, 134, 95); /* 例如将文字颜色改为红色 */
+    /* 其他样式 */
+}
+
+.btn-outline-success {
+    /* 文字颜色 */
+    color: rgb(83, 134, 95);
+    /* 边框颜色 */
+    border-color: rgb(83, 134, 95);
+    /* 其他样式 */
+    
+}
+
+.btn-outline-success:hover {
+    /* 背景颜色 */
+    background-color: rgb(83, 134, 95);
+    /* 文字颜色 */
+    color: white;
+    /* 其他样式 */
+}
+
+.btn-primary {
+     /* 背景颜色 */
+     background-color: rgb(83, 134, 95);
+     /* 文字颜色 */
+     color: white;
+     /* 其他样式 */
+
+}
+
+.btn-primary:hover {
+    /* 背景颜色 */
+    background-color:rgb(33, 62, 39);
+    /* 文字颜色 */
+    color: rgb(255, 255, 255);
+    /* 其他样式 */
+
+}
+
+
+/* 其他样式保持不变 */
+.text-mary {
+    font-family: "Arial", sans-serif; /* 设置字体 */
+    font-size: 30px; /* 设置字体大小 */
+    font-weight: bolder; /* 设置字体粗细 */
+    color: #ffffff; /* 设置文字颜色 */
+    /* 其他样式 */
+}
+
+.container .col h2 {
+    font-family: "Arial", sans-serif; /* 设置字体 */
+    font-weight: bolder; /* 设置字体粗细 */
+    font-size: 22px; /* 设置字体大小 */
+    color: rgb(22, 55, 28);
+}
+
+.container .col p {
+    font-family: "Arial", sans-serif; /* 设置字体 */
+    font-weight: lighter; /* 设置字体粗细 */
+    font-size: 17px;
+    line-height: 1.8;
+    display: inline-block;
+}
+
+
+.btn-mary {
+    background-color: rgb(83, 134, 95);
+    color: #fff;
+}
+
+.btn-mary:hover {
+    background-color: rgb(33, 62, 39);
+    color: rgb(255, 255, 255);
+}
+
+.d-block {
+    border-radius: 10px;
+
+}
+
+.card {
+    transition: all .4s;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 5px #ddd;
+    transform: translate(-5px, -5px) rotate(-1deg);
+}
+
+.container-fluid.bg-dark {
+    /* 移除背景颜色 */
+    
+    background-image: url('bg2.png'); /* 替换 'your-transparent-image.png' 为您的半透明 PNG 图片路径 */
+    /* 可选：调整背景图像大小，以适应容器 */
+    background-size: cover; /* 图像大小覆盖整个容器 */
+}
+
+.card-title{
+    font-size: 18px; /* 设置字体大小 */
+    color: rgb(22, 55, 28);
+}
+
+.card-text{
+    font-size: 8px; /* 设置字体大小 */
+    color: rgb(0, 0, 0);
+}
+
