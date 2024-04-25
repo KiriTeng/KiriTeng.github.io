@@ -75,17 +75,17 @@
     /* 其他样式 */
 }
 
-.container .col h2 {
+.col-md-7 order-md-2 {
     font-family: "Arial", sans-serif; /* 设置字体 */
     font-weight: bolder; /* 设置字体粗细 */
-    font-size: 22px; /* 设置字体大小 */
+    font-size: 15px; /* 设置字体大小 */
     color: rgb(22, 55, 28);
 }
 
 .container .col p {
     font-family: "Arial", sans-serif; /* 设置字体 */
     font-weight: lighter; /* 设置字体粗细 */
-    font-size: 17px;
+    font-size: 13px;
     line-height: 1.8;
     display: inline-block;
 }
@@ -124,7 +124,7 @@
 }
 
 .card-title{
-    font-size: 18px; /* 设置字体大小 */
+    font-size: 17px; /* 设置字体大小 */
     color: rgb(22, 55, 28);
 }
 
