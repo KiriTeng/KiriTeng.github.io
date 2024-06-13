@@ -1,23 +1,129 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+p {
+    color: #ffffff; /* 设置文字颜色，可以使用颜色名称、十六进制值或者 RGB 值 */
+    text-align: justify; /* 段落文本两端对齐 */
+    line-height: 1.5; /* 设置段落行高 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff; /* 设置标题的文字颜色 */
+}
+
+.card-title {
+    color: #ffffff; /* 设置卡片标题的文字颜色 */
+}
+
+
 .heroimg {
-    background-image: url(bg.jpg); /* 替换 'your-image.jpg' 为您的图片路径 */
+    position: relative;
+    width: 100%;
+    height: 400px; /* 背景图像容器的高度 */
+    background-image: url('bg.jpg'); /* 替换为您的背景图像路径 */
     background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: filter 0.3s ease; /* 添加过渡效果，使效果更平滑 */
+}
+
+
+.heroimg::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px; /* 光照效果的直径 */
+    height: 100px;
+    background: rgba(255, 255, 255, 0.4); /* 白色光照效果 */
+    border-radius: 50%; /* 圆形 */
+    pointer-events: none;
+    z-index: 2; /* 确保光照效果在遮罩层和 slogan 上 */
+    mix-blend-mode: screen; /* 混合模式，使光照效果更自然 */
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    opacity: 0; /* 初始状态下隐藏 */
+}
+
+.heroimg:hover::before {
+    content: '';
+    position: absolute;
+    width: 100px; /* 光照效果的直径 */
+    height: 100px;
+    background: rgba(255, 255, 255, 3); /* 白色光照效果 */
+    border-radius: 50%; /* 圆形 */
+    pointer-events: none;
+    z-index: 2; /* 确保光照效果在遮罩层和 slogan 上 */
+    mix-blend-mode: screen; /* 混合模式，使光照效果更自然 */
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    opacity: 0; /* 初始状态下隐藏 */
+}
+
+.heroimg:hover {
+    filter: saturate(150%) brightness(120%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* 初始状态下完全透明 */
+    z-index: 0;
+    pointer-events: none;
+    transition: background-color 0.3s ease; /* 添加透明度过渡效果 */
+}
+
+.light {
+    position: absolute;
+    width: 200px; /* 光照效果的直径 */
+    height: 200px;
+    background: rgba(255, 255, 255, 0.4); /* 白色光照效果 */
+    border-radius: 50%; /* 圆形 */
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 添加光照效果的淡入淡出过渡效果 */
+    z-index: 2;
+}
+
+.heroimg.saturate-effect {
+    filter: saturate(150%) brightness(120%);
+}
+
+.slogan {
+    text-align: center;
+    color: #fff; /* 白色文字 */
+    padding-top: 100px;
+    position: relative; /* 相对定位 */
+    z-index: 1; /* 在遮罩层之下但在光照效果之上 */
+}
+
+.heroimg:hover .slogan {
+    cursor: pointer;
+}
+
+.heroimg:hover .slogan:hover::before {
+    opacity: 1; /* 鼠标在 slogan 上时显示光照效果 */
 }
 
 .navbar {
     backdrop-filter: blur(20px); /* 模糊效果，可以根据需要调整像素值 */
-    color:rgb(255, 255, 255) ;
+    color: rgb(255, 255, 255);
 }
 
 .navbar-brand {
-    /* 添加您希望的效果，例如改变文字颜色或添加阴影等 */
     color: rgb(255, 255, 255); /* 例如将文字颜色改为红色 */
-    /* 其他样式 */
 }
 
 .navbar-brand:hover {
-    /* 添加您希望的效果，例如改变文字颜色或添加阴影等 */
-    color: rgb(83, 134, 95); /* 例如将文字颜色改为红色 */
-    /* 其他样式 */
+    color: #0f0; /* 例如将文字颜色改为绿色 */
+    text-shadow:0 0 15px#0f0  ,0 0 30px #0f0;
 }
 
 .nav-link {
@@ -25,61 +131,38 @@
 }
 
 .nav-link:hover {
-    /* 添加您希望的效果，例如改变文字颜色或添加阴影等 */
-    color: rgb(83, 134, 95); /* 例如将文字颜色改为红色 */
-    /* 其他样式 */
+    color: #0f0; /* 例如将文字颜色改为绿色 */
+    text-shadow:0 0 15px#0f0  ,0 0 30px #0f0;
 }
 
+/*search按鈕*/
 .btn-outline-success {
-    /* 文字颜色 */
-    color: rgb(83, 134, 95);
-    /* 边框颜色 */
-    border-color: rgb(83, 134, 95);
-    /* 其他样式 */
-    
+    color: #fff; /* 文字颜色 */
+    border-color: #fff; /* 边框颜色 */
 }
 
 .btn-outline-success:hover {
-    /* 背景颜色 */
-    background-color: rgb(83, 134, 95);
-    /* 文字颜色 */
-    color: white;
-    /* 其他样式 */
+    background-color: #0f0; /* 背景颜色 */
+    color: white; /* 文字颜色 */
 }
 
+/*卡牌按鈕*/
 .btn-primary {
-     /* 背景颜色 */
-     background-color: rgb(83, 134, 95);
-     /* 文字颜色 */
-     color: white;
-     /* 其他样式 */
-
+    background-color: rgb(83, 134, 95); /* 背景颜色 */
+    color: white; /* 文字颜色 */
 }
 
 .btn-primary:hover {
-    /* 背景颜色 */
-    background-color:rgb(33, 62, 39);
-    /* 文字颜色 */
-    color: rgb(255, 255, 255);
-    /* 其他样式 */
-
+    background-color: rgb(33, 62, 39); /* 背景颜色 */
+    color: rgb(255, 255, 255); /* 文字颜色 */
 }
 
-
-/* 其他样式保持不变 */
 .text-mary {
     font-family: "Arial", sans-serif; /* 设置字体 */
     font-size: 30px; /* 设置字体大小 */
     font-weight: bolder; /* 设置字体粗细 */
     color: #ffffff; /* 设置文字颜色 */
     /* 其他样式 */
-}
-
-.col-md-7 order-md-2 {
-    font-family: "Arial", sans-serif; /* 设置字体 */
-    font-weight: bolder; /* 设置字体粗细 */
-    font-size: 15px; /* 设置字体大小 */
-    color: rgb(22, 55, 28);
 }
 
 .container .col p {
@@ -90,46 +173,178 @@
     display: inline-block;
 }
 
-
-.btn-mary {
-    background-color: rgb(83, 134, 95);
-    color: #fff;
+.btn-group-vertical {
+    margin-top: 20px;
 }
 
-.btn-mary:hover {
-    background-color: rgb(33, 62, 39);
-    color: rgb(255, 255, 255);
+/*三大按鈕*/
+.btn-mary {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    color: #fff; /* 默认文字颜色 */
+    background-color: rgb(14, 16, 15); /* 默认背景颜色 */
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 48px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative; /* 让伪元素相对于按钮进行定位 */
+    overflow: hidden; /* 确保超出部分隐藏，以显示伪元素效果 */
+}
+
+.btn-mary::before {
+    content: '';
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(var(--clr), transparent, transparent); /* 使用 --clr 变量作为径向渐变的颜色 */
+    opacity: 0;
+    transition: .5s , top 0s,left 0s;
+}
+
+
+.btn-mary::after {
+    content: '';
+    background-color: rgb(14, 16, 15); 
+    position: absolute; 
+    inset: 1px;
+    border-radius: 48px;
+}
+
+/*before跟after先寫大的，其餘小的單獨寫*/
+
+
+.btn-1 span {
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.1em;
+    
+}
+
+.btn-1:hover {
+    color: var(--clr);
+    text-shadow:0 0 15px var(--clr) ,0 0 30px var(--clr);
+    background-color: rgb(14, 16, 15); /* 悬停时背景颜色 */
+    transform: translateY(-5px); /* 悬停时微微向上移动 */
+}
+
+.btn-1:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* 悬停时显示伪元素 */
+    opacity: 1;
+}
+
+.btn-1:hover::after {
+    opacity: 1;
+
+}
+
+
+/* 段落按鈕 */
+.btn-4, .btn-5 {
+    display: block;
+    width: 150px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 0.75rem;
+    color: #fff; /* 默认文字颜色 */
+    background-color: rgb(14, 16, 15); /* 默认背景颜色 */
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 48px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative; /* 让伪元素相对于按钮进行定位 */
+    overflow: hidden; /* 确保超出部分隐藏，以显示伪元素效果 */
+}
+
+.btn-4::before, .btn-5::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(var(--clr), transparent, transparent); /* 使用 --clr 变量作为径向渐变的颜色 */
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.btn-4::after, .btn-5::after {
+    content: '';
+    background-color: rgb(14, 16, 15); 
+    position: absolute; 
+    inset: 1px;
+    border-radius: 48px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-4 span, .btn-5 span {
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.1em;
+}
+
+.btn-4:hover, .btn-5:hover {
+    color: var(--clr);
+    text-shadow: 0 0 15px var(--clr), 0 0 30px var(--clr);
+    background-color: rgb(14, 16, 15); /* 悬停时背景颜色 */
+    transform: translateY(-5px); /* 悬停时微微向上移动 */
+}
+
+.btn-4:hover::before, .btn-5:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* 悬停时显示伪元素 */
+    opacity: 1;
+}
+
+.btn-4:hover::after, .btn-5:hover::after {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+.btn-card {
+    background-color: rgb(134, 95, 83);
+    color: #fff;
+    border-radius: 48px;
+}
+
+.btn-card:hover {
+    background-color: rgb(134, 33, 62);
+    transform: translateY(-5px); /* 悬停时轻微向上移动 */
 }
 
 .d-block {
     border-radius: 10px;
-
 }
 
 .card {
     transition: all .4s;
+    background-color:#1d1d1d
+    
 }
 
 .card:hover {
-    box-shadow: 5px 5px 5px #ddd;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0);
     transform: translate(-5px, -5px) rotate(-1deg);
 }
 
 .container-fluid.bg-dark {
     /* 移除背景颜色 */
-    
     background-image: url('bg2.png'); /* 替换 'your-transparent-image.png' 为您的半透明 PNG 图片路径 */
     /* 可选：调整背景图像大小，以适应容器 */
     background-size: cover; /* 图像大小覆盖整个容器 */
 }
-
-.card-title{
-    font-size: 17px; /* 设置字体大小 */
-    color: rgb(22, 55, 28);
-}
-
-.card-text{
-    font-size: 8px; /* 设置字体大小 */
-    color: rgb(0, 0, 0);
-}
-
